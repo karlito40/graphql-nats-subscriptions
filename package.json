@@ -15,8 +15,7 @@
   },
   "dependencies": {
     "graphql-subscriptions": "^1.0.0",
-    "iterall": "^1.2.2",
-    "nats": "^1.0.1"
+    "iterall": "^1.2.2"
   },
   "devDependencies": {
     "@types/node": "^10.12.10",

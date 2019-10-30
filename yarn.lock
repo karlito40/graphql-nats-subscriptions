@@ -299,24 +299,12 @@ minimatch@^3.0.4:
   dependencies:
     brace-expansion "^1.1.7"
 
-nats@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/nats/-/nats-1.0.1.tgz#e1bd1561a20188f9aceb2d275127facbc762c292"
-  integrity sha512-FpvmGwCNcKxujBAd+wUkiIx9IjsOETj224PositBx/KYqlQtICY9ZwBLIiMstndwuiSXm132VhN1HV+m+WSbtg==
-  dependencies:
-    nuid "^1.0.0"
-
 normalize-path@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/normalize-path/-/normalize-path-2.1.1.tgz#1ab28b556e198363a8c1a6f7e6fa20137fe6aed9"
   integrity sha1-GrKLVW4Zg2Oowab35vogE3/mrtk=
   dependencies:
     remove-trailing-separator "^1.0.1"
-
-nuid@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/nuid/-/nuid-1.0.0.tgz#04ecc21be41cc321940a9089984382f3bdc61638"
-  integrity sha512-046ukkoG8NXjiJMpQYLpGhYJIXJlClt2rDlnubCXN1/pztO/YTD2WkhyBZsEADsUwVtVMv5UmC0B2QrT5sZiDQ==
 
 object.omit@^2.0.0:
   version "2.0.1"
