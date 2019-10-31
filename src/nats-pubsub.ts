@@ -6,8 +6,8 @@ export class NatsPubSub implements PubSubEngine {
   private queue: String
 
   constructor({ nats, queue }) {
-    this.nats = nats;
-    this.queue = queue;
+    this.nats = nats
+    this.queue = queue
   }
 
   public async publish(subject: string, payload: any): Promise<void> {
@@ -15,7 +15,16 @@ export class NatsPubSub implements PubSubEngine {
   }
 
   public async subscribe(subject: string, onMessage: Function): Promise<number> {
-    return await this.nats.subscribe(subject, this.queue, msg => onMessage(JSON.parse(msg)))
+    return await this.nats.subscribe(subject, this.queue, msg => {
+      let payload
+      try {
+        payload = JSON.parse(msg)
+      } catch (e) {
+        payload = msg
+      }
+
+      onMessage(payload)
+    })
   }
 
   public unsubscribe(sid: number) {
