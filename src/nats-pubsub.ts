@@ -3,11 +3,9 @@ import { PubSubAsyncIterator } from './pubsub-async-iterator'
 
 export class NatsPubSub implements PubSubEngine {
   private nats: any
-  private queue: String
 
-  constructor({ nats, queue }) {
+  constructor(nats) {
     this.nats = nats
-    this.queue = queue
   }
 
   public async publish(subject: string, payload: any): Promise<void> {
@@ -15,7 +13,7 @@ export class NatsPubSub implements PubSubEngine {
   }
 
   public async subscribe(subject: string, onMessage: Function): Promise<number> {
-    return await this.nats.subscribe(subject, { queue: this.queue }, msg => {
+    return await this.nats.subscribe(subject, msg => {
       let payload
       try {
         payload = JSON.parse(msg)
@@ -24,7 +22,7 @@ export class NatsPubSub implements PubSubEngine {
       }
 
       onMessage(payload)
-    })
+    });
   }
 
   public unsubscribe(sid: number) {
