@@ -15,7 +15,7 @@ export class NatsPubSub implements PubSubEngine {
   }
 
   public async subscribe(subject: string, onMessage: Function): Promise<number> {
-    return await this.nats.subscribe(subject, this.queue, msg => {
+    return await this.nats.subscribe(subject, { queue: this.queue }, msg => {
       let payload
       try {
         payload = JSON.parse(msg)
